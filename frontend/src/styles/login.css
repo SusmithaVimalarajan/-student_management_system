@@ -21,12 +21,7 @@
 .login-info {
     position: relative;
 
-    background: linear-gradient(
-        135deg,
-        #1d4ed8,
-        #2563eb,
-        #3b82f6
-    );
+    background: Black;
 
     color: #ffffff;
     padding: 40px;

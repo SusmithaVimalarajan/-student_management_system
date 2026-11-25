@@ -173,6 +173,10 @@
         0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.student-form .password-visibility-button {
+    right: 10px;
+}
+
 
 /* =========================================================
    Form Actions

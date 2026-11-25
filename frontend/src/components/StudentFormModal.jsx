@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { Eye, EyeOff, X } from "lucide-react";
 
 import apiRequest from "../services/api";
 
@@ -26,6 +26,7 @@ function StudentFormModal({
 
     const [formLoading, setFormLoading] = useState(false);
     const [formError, setFormError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
     // Reset form when editingStudent changes or modal opens
     useEffect(() => {
@@ -62,6 +63,7 @@ function StudentFormModal({
     // Handle Close
     const handleClose = () => {
         if (formLoading) return;
+        setShowPassword(false);
         setFormError("");
         onClose();
     };
@@ -251,14 +253,35 @@ function StudentFormModal({
                                 Password
                             </label>
 
-                            <input
-                                type="password"
-                                name="password"
-                                value={formData.password}
-                                onChange={handleInputChange}
-                                disabled={formLoading}
-                                required
-                            />
+                            <div className="password-input-wrapper">
+                                <input
+                                    id="password"
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    value={formData.password}
+                                    onChange={handleInputChange}
+                                    disabled={formLoading}
+                                    required
+                                />
+                                <button
+                                    type="button"
+                                    className="password-visibility-button"
+                                    onClick={() =>
+                                        setShowPassword((visible) => !visible)
+                                    }
+                                    aria-label={
+                                        showPassword ? "Hide password" : "Show password"
+                                    }
+                                    aria-controls="password"
+                                    aria-pressed={showPassword}
+                                    disabled={formLoading}
+                                >
+                                    {showPassword
+                                        ? <EyeOff size={18} aria-hidden="true" />
+                                        : <Eye size={18} aria-hidden="true" />
+                                    }
+                                </button>
+                            </div>
                         </div>
                     )}
 

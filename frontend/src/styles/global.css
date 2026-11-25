@@ -31,6 +31,45 @@ select {
     font-family: inherit;
 }
 
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-wrapper input {
+    padding-right: 44px;
+}
+
+.password-visibility-button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+}
+
+.password-visibility-button:hover {
+    color: #1e293b;
+}
+
+.password-visibility-button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.password-visibility-button:disabled {
+    opacity: 0.6;
+}
+
 button {
     cursor: pointer;
 }

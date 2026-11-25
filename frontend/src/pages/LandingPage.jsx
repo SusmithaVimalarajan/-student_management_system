@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 
 import "../styles/landing.css";
 
+
 import {
     GraduationCap,
     ShieldCheck,
@@ -34,12 +35,12 @@ function LandingPage() {
                         <div className="hero-content">
 
                             <span className="hero-badge">
-                                ABC Institute
+                                    UCJ
                             </span>
 
                             <h1>
-                                Student Management
-                                <span> System</span>
+                                University
+                                College of Jaffna
                             </h1>
 
                             <p>

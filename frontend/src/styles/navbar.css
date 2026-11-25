@@ -4,9 +4,9 @@
    ========================================================= */
 
 .navbar {
-    background: #ffffff;
+    background: #0f172a;
 
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid darkgrey;
 
     position: sticky;
     top: 0;
@@ -95,7 +95,7 @@
 }
 
 .nav-link {
-    color: #334155;
+    color:  whitesmoke;
 
     font-size: 14px;
     font-weight: 600;
@@ -151,7 +151,7 @@
 }
 
 .navbar-user strong {
-    color: #1e293b;
+    color: white;
 
     font-size: 14px;
     font-weight: 700;
