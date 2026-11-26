@@ -236,7 +236,7 @@
 .students-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px;
+    min-width: 960px;
 }
 
 .students-table th {

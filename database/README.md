@@ -47,7 +47,9 @@ The database directory contains the following files:
 database/
 ├── README.md
 ├── schema.sql
-└── seed.sql
+├── seed.sql
+└── migrations/
+    └── CR033_add_last_login.sql
 ```
 
 ### schema.sql
@@ -118,6 +120,7 @@ Main fields:
 | username | Login username |
 | password_hash | Securely hashed password |
 | role | User role |
+| last_login | Date and time of the most recent successful student login |
 | created_at | Account creation date |
 | updated_at | Last update date |
 
@@ -197,6 +200,16 @@ mysql -u root -p < schema.sql
 The command will ask for the MySQL password.
 
 Alternatively, open `schema.sql` using MySQL Workbench and execute the script.
+
+For an existing database, apply the CR033 migration once before starting the
+updated backend:
+
+```bash
+mysql -u root -p student_management_system < database/migrations/CR033_add_last_login.sql
+```
+
+Replace `student_management_system` with the database name configured by the
+backend's `DB_NAME` environment variable.
 
 ---
 

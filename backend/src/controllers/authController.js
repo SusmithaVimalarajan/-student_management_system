@@ -3,7 +3,8 @@ const jwt = require("jsonwebtoken");
 
 const {
     findUserByUsername,
-    findUserById
+    findUserById,
+    updateStudentLastLogin
 } = require("../models/userModel");
 
 const login = async (req, res) => {
@@ -39,6 +40,10 @@ const login = async (req, res) => {
                 success: false,
                 message: "Invalid username or password"
             });
+        }
+
+        if (user.role === "STUDENT") {
+            await updateStudentLastLogin(user.user_id);
         }
 
         // Create JWT
